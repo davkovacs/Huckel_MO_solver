@@ -11,12 +11,12 @@ def find_degenerates(energies):
     degen=1
     for i in range(0,len(energies)-1):
         if not np.isclose(energies[i],energies[i+1],atol=0.00001):
-            degen_energies.append(energies[i])
+            degen_energies.append(round(energies[i],4))
             degeneracies.append(degen)
             degen=1
         else:
             degen+=1
-    degen_energies.append(energies[len(energies)-1])
+    degen_energies.append(round(energies[len(energies)-1],4))
     degeneracies.append(degen)
     return degen_energies, degeneracies
     
